@@ -1,0 +1,65 @@
+<html>
+	<head>
+		<title> Language App </title>
+		<style>
+			*{font-size:50px; font-family:Cambria;}
+			body{background-color:azure;}
+			input[type="radio"] {height:0.5em; width:2%;}
+			h1 {background-color:black; color:white; width:70%; border-radius:30px;}
+
+			
+		</style>
+	</head>
+
+	<body>
+		<center>
+			<h1> Language App by Neha</h1>
+			<form onsubmit="show()">
+				<input type="text" placeholder="enter your name" id="name"/>
+				</br></br>
+				<input type="checkbox"  id="py"/> Python
+				<input type="checkbox"  id="ja"/> Java
+				<input type="checkbox"  id="js"/> Javascript
+				</br></br>
+				<input type="submit"/>	
+			</form>
+				<h2 id="msg"/>
+			<script>
+				function show()
+				{
+					event.preventDefault();
+					let name= document.getElementById("name");
+					let py= document.getElementById("py");
+					let ja= document.getElementById("ja");
+					let js= document.getElementById("js");
+					let msg= document.getElementById("msg");
+
+					if(name.value==="")
+					{
+						alert(" Please enter your name");
+						msg.innerHTML="";
+						name.focus();
+						return;
+					}
+					
+					let n=name.value;
+					let la=""; 
+					if (py.checked)         la = la + "Python";
+					if (ja.checked)         la = la + "Java";
+					if (js.checked)         la = la + "Javascript";
+
+
+					if (la ==="")
+					   la = "GADHEDA";
+		
+					let a= "name = " +n+ " language = "  +la;
+					msg.innerHTML =a;
+
+				}
+			</script>
+		</center>
+
+	</body>
+
+
+</html>
